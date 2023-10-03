@@ -22,7 +22,7 @@ data Env = Env
     deriving (Show, Eq)
 
 -- | Type of a LaTeX environment. Corresponds to a unique environment name.
-data Tag = Definition | Lemma | Theorem | Proof | Claim | Example | Assumption
+data Tag = Definition | Lemma | Theorem | Proof | Claim | Example | Assumption | Corollary | Proposition
     deriving (Show, Eq)
 
 -- Aliases for terms in a DefinitionList.
@@ -95,6 +95,8 @@ parseTag txt = case txt of
     "Lemma"      -> Just Lemma
     "Pf"         -> Just Proof
     "Proof"      -> Just Proof
+    "Proposition" -> Just Proposition
+    "Corollary" -> Just Corollary
     "Thm"        -> Just Theorem
     "Theorem"    -> Just Theorem
     "Ex"         -> Just Example
@@ -109,6 +111,8 @@ getLatexEnvName e = case e of
     Definition -> "definition"
     Lemma      -> "lemma"
     Proof      -> "proof"
+    Proposition -> "proposition"
+    Corollary -> "proposition"
     Theorem    -> "theorem"
     Example    -> "example"
     Assumption -> "assumption"
