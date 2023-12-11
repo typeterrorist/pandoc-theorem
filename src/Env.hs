@@ -69,6 +69,7 @@ makeEnv (tag, name, rest) defs
     toRawText S.Empty      = ""
     toRawText (Str s:<|xs) = s `T.append` (toRawText xs)
     toRawText (Space:<|xs) = " " `T.append` (toRawText xs)
+    toRawText (RawInline (Format "tex") s:<|xs) = s `T.append` (toRawText xs)
     toRawText (_    :<|xs) = toRawText xs
 
 -- Defines the first and last blocks of the TeX environment.
