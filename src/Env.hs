@@ -113,7 +113,7 @@ getLatexEnvName e = case e of
     Lemma      -> "lemma"
     Proof      -> "proof"
     Proposition -> "proposition"
-    Corollary -> "proposition"
+    Corollary -> "corollary"
     Theorem    -> "theorem"
     Example    -> "example"
     Assumption -> "assumption"
