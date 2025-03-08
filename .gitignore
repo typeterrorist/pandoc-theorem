@@ -4,3 +4,5 @@ pandoc-theorem.cabal
 examples/*.pdf
 examples/*.tex
 !examples/header.tex
+.aider*
+.env
